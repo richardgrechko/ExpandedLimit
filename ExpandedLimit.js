@@ -2,17 +2,19 @@ class ExpandedLimit
 {
 	constructor(mantissa, exponent, layer)
 	{
-		this.number = (mantissa + "E" + exponent)*1
-		if(this.number > 1.79E308 || layer >= 1)
+		let k = 0;
+		k = (mantissa + "E" + exponent)*1
+		if(k > 1.79E308 || layer >= 1)
 		{
-			this.number = "E".repeat(layer-1) + (mantissa + "E" + exponent)
+			k = "E".repeat(layer-1) + (mantissa + "E" + exponent)
 		} else if (layer < 1 && layer != 0)
 		{
-			this.number = 1/new ExpandedLimit(mantissa,exponent,-layer);
-			if (this.number < 1E-308) {
-				this.number = 0;
+			k = 1/new ExpandedLimit(mantissa,exponent,-layer);
+			if (k < 1E-308) {
+				k = 0;
 			}
 		}
+		return k;
 	}
 }
 // ex.
