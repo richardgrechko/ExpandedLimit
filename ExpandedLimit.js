@@ -16,28 +16,28 @@ class ExpandedLimit
 		}
 		return k;
 	}
-	beaf(...arg)
-	{
-		if(arg.length === 1)
-		{
-			this.result = arg[0]
-		}else if(arg.length === 2)
-		{
-			this.result = arg[0] + "^" + arg[1]
-		}else if(arg.length === 3)
-		{
-			if(arg[2]>5)
-			{
-				this.result = arg[0] + "^".repeat(arg[2]) + arg[1]
-			}else
-			{
-				this.result = arg[0] + "{" + arg[2] + "}" + arg[1]
-			}
-		}else if(typeof arg[0] === "string") {
-			this.result = "{" + arg[0] + "}"
-		}
-	}
 }
+ExpandedLimit.beaf = function (...arg)
+{
+	if(arg.length === 1)
+	{
+		this.result = arg[0]
+	}else if(arg.length === 2)
+	{
+		this.result = arg[0] + "^" + arg[1]
+	}else if(arg.length === 3)
+	{
+		if(arg[2]>5)
+		{
+			this.result = arg[0] + "^".repeat(arg[2]) + arg[1]
+		}else
+		{
+			this.result = arg[0] + "{" + arg[2] + "}" + arg[1]
+		}
+	}else if(typeof arg[0] === "string") {
+		this.result = "{" + arg[0] + "}"
+	}
+};
 // ex.
 console.log(new ExpandedLimit(1,10000,1))
 console.log(ExpandedLimit.beaf(10,1000))
