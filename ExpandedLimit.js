@@ -19,24 +19,26 @@ class ExpandedLimit
 }
 ExpandedLimit.beaf = function (...arg)
 {
+	let k;
 	if(arg.length === 1)
 	{
-		this.result = arg[0]
+		k = arg[0]
 	}else if(arg.length === 2)
 	{
-		this.result = arg[0] + "^" + arg[1]
+		k = arg[0] + "^" + arg[1]
 	}else if(arg.length === 3)
 	{
 		if(arg[2]>5)
 		{
-			this.result = arg[0] + "^".repeat(arg[2]) + arg[1]
+			k = arg[0] + "^".repeat(arg[2]) + arg[1]
 		}else
 		{
-			this.result = arg[0] + "{" + arg[2] + "}" + arg[1]
+			k = arg[0] + "{" + arg[2] + "}" + arg[1]
 		}
 	}else if(typeof arg[0] === "string") {
-		this.result = "{" + arg[0] + "}"
+		k = "{" + arg[0] + "}"
 	}
+	return k;
 };
 // ex.
 console.log(new ExpandedLimit(1,10000,1))
