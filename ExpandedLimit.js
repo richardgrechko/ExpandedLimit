@@ -34,9 +34,10 @@ class ExpandedLimit
 				return arg[0] + "{" + arg[2] + "}" + arg[1]
 			}
 		}else if(typeof arg[0] === "string") {
-			"{" + arg[0] + "}"
+			return "{" + arg[0] + "}"
 		}
 	}
 }
 // ex.
-console.log(new ExpandedLimit(10000,1,1))
+console.log(new ExpandedLimit(1,10000,1))
+console.log(ExpandedLimit.beaf(10,1000))
