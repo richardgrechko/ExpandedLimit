@@ -20,21 +20,21 @@ class ExpandedLimit
 	{
 		if(arg.length === 1)
 		{
-			return arg[0]
+			this.result = arg[0]
 		}else if(arg.length === 2)
 		{
-			return arg[0] + "^" + arg[1]
+			this.result = arg[0] + "^" + arg[1]
 		}else if(arg.length === 3)
 		{
 			if(arg[2]>5)
 			{
-				return arg[0] + "^".repeat(arg[2]) + arg[1]
+				this.result = arg[0] + "^".repeat(arg[2]) + arg[1]
 			}else
 			{
-				return arg[0] + "{" + arg[2] + "}" + arg[1]
+				this.result = arg[0] + "{" + arg[2] + "}" + arg[1]
 			}
 		}else if(typeof arg[0] === "string") {
-			return "{" + arg[0] + "}"
+			this.result = "{" + arg[0] + "}"
 		}
 	}
 }
