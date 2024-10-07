@@ -16,6 +16,27 @@ class ExpandedLimit
 		}
 		return k;
 	}
+	beaf(...arg)
+	{
+		if(arg.length === 1)
+		{
+			return arg[0]
+		}else if(arg.length === 2)
+		{
+			return arg[0] + "^" + arg[1]
+		}else if(arg.length === 3)
+		{
+			if(arg[2]>5)
+			{
+				return arg[0] + "^".repeat(arg[2]) + arg[1]
+			}else
+			{
+				return arg[0] + "{" + arg[2] + "}" + arg[1]
+			}
+		}else if(typeof arg[0] === "string") {
+			"{" + arg[0] + "}"
+		}
+	}
 }
 // ex.
 console.log(new ExpandedLimit(10000,1,1))
