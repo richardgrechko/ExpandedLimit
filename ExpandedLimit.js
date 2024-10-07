@@ -5,7 +5,7 @@ class ExpandedLimit
 		this.number = (mantissa + "E" + exponent)*1
 		if(this.number > 1.79E308)
 		{
-			this.number = "E".repeat(layer) + (Math.log10(mantissa) + exponent)
+			this.number = "E".repeat(layer-1) + (mantissa + "E" + exponent)
 		} else if (layer < 1 && layer != 0)
 		{
 			this.number = 1/new ExpandedLimit(mantissa,exponent,-layer);
