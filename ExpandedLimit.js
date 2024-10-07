@@ -3,7 +3,7 @@ class ExpandedLimit
 	constructor(mantissa, exponent, layer)
 	{
 		this.number = (mantissa + "E" + exponent)*1
-		if(this.number > 1.79E308)
+		if(this.number > 1.79E308 || layer >= 1)
 		{
 			this.number = "E".repeat(layer-1) + (mantissa + "E" + exponent)
 		} else if (layer < 1 && layer != 0)
