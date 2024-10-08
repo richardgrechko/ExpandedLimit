@@ -9,7 +9,7 @@ class ExpandedLimit
 			k = "E".repeat(layer-1) + (mantissa + "E" + exponent)
 		} else if (layer < 1 && layer != 0)
 		{
-			k = 1/new ExpandedLimit(mantissa,exponent,-layer);
+			k = 1/(new ExpandedLimit(mantissa,exponent,-layer));
 			if (k < 1E-308) {
 				k = 0;
 			}
