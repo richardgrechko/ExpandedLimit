@@ -31,7 +31,7 @@ ExpandedLimit.beaf = function (...arg)
 		{
 			k = arg[0] + "{" + arg[2] + "}" + arg[1]
 		}
-	}else if(typeof arg[0] === "string") {
+	}else if(typeof arg[0] === "string" && (!arg[0].includes("(",")"))) {
 		k = "{" + arg[0] + "}"
 	}
 	return k;
