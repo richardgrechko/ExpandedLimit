@@ -24,7 +24,7 @@ ExpandedLimit.beaf = function (...arg)
 		k = arg[0] + "^" + arg[1]
 	}else if(arg.length === 3)
 	{
-		if(arg[2]>5)
+		if(arg[2]<5)
 		{
 			k = arg[0] + "^".repeat(arg[2]) + arg[1]
 		}else
